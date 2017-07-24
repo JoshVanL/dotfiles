@@ -1,0 +1,17 @@
+#!/bin/sh
+cd ~/Documents/Pooper/Pooper-snooper/ 
+
+SESSION_NAME="Pooper_Snooper"
+tmux new-session -s ${SESSION_NAME} -n 'Vim' -d
+tmux send-keys  'vim www/js/controllers.js' C-m
+tmux send-keys  ':NERDTree' C-m
+
+tmux new-window -n 'Shell$' 
+tmux split-window -v -p 30
+tmux selectp -t 1
+tmux send-keys 'adb devices' C-m
+
+tmux selectp -t 0
+tmux send-keys 'ionic run android -lsc'
+
+tmux attach -t ${SESSION_NAME}

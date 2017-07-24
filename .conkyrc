@@ -1,0 +1,102 @@
+background no
+use_xft yes
+xftfont 123:size=8
+xftalpha 0.1
+#Update Interval
+update_interval 0.4
+total_run_times 0
+own_window yes
+own_window_type normal
+own_window_transparent yes
+#Transparent Background Option - Yes or No
+#Transparent amount options
+own_window_argb_visual yes
+own_window class desktop
+own_window_colour 000000
+own_window_argb_value 100
+#End of Transparent Settings
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color gray
+default_shade_color red
+default_outline_color black
+#Screen Alignment
+alignment top_right
+gap_x 3
+gap_y 5
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 6
+override_utf8_locale no
+use_spacer yes
+
+#Settings Below TEXT are shown on the screen
+TEXT
+#TIME SETTINGS
+${color Grey} ${font Sans:size=30}$alignr${time %H:%M}
+${voffset -20}${color Grey} ${font :bold:size=10}$alignr${time %d %b. %Y}
+${font :bold:size=10}$alignr${time %A}
+#System Section
+${voffset -30}
+${font}
+${font Sans:size=10}${color Grey}System ${color Gray} ${hr 2}
+$font${color DimGray}$sysname $kernel $alignr $machine
+CPU  $alignr${freq_g cpu0}Ghz
+Uptime $alignr${uptime}
+File System $alignr${fs_type}
+Threads $alignr${offset 3}${threads}
+Workspace $alignr${offset 2}${desktop} 
+#CPU Section
+${voffset 2}
+${font Sans:size=10}${color Grey}CPU Cores ${color Gray}${hr 2}
+$font${color DimGray} 0 : ${cpu cpu1}% ${cpubar cpu1}
+ 1 : ${cpu cpu2}% ${cpubar cpu2}
+ 2 : ${cpu cpu3}% ${cpubar cpu3}
+ 3 : ${cpu cpu4}% ${cpubar cpu4}
+ ${color Grey}${cpugraph}
+${font Sans:size=10}${color Grey}Memory ${color Grey}${hr 2}
+$font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
+$membar
+$font${color DimGray}SWAP $alignc${offset 20}$swap/ $swapmax $alignr $swapperc%
+$swapbar
+#SSD Section
+${voffset 2}
+${font Sans:size=10}${color Grey}Disk ${color Grey}${hr 2}
+$font${color DimGray} home: ${fs_used /home} / ${fs_size /home} ${alignr} ${fs_used_perc /home}%
+ ${fs_bar /home}
+#Processes Section
+${voffset 2}
+${font Sans:size=10}${color Grey}Processes ${processes}${color Grey}${hr 2}
+$font${color DimGray}Name${goto 1293}mem%${goto 1334}cpu%
+$font${top_mem name 1}${goto 1291}${top mem 1}${goto 1330}${top cpu 1}
+$font${top name 2}${goto 1291}${top mem 2}${goto 1330}${top cpu 2}
+$font${top name 3}${goto 1291}${top mem 3}${goto 1330}${top cpu 3}
+$font${top name 4}${goto 1291}${top mem 4}${goto 1330}${top cpu 4}
+$font${top name 5}${goto 1291}${top mem 5}${goto 1330}${top cpu 5}
+$font${top name 6}${goto 1291}${top mem 6}${goto 1330}${top cpu 6}
+$font${top name 7}${goto 1291}${top mem 7}${goto 1330}${top cpu 7}
+#Network Section                             
+${voffset 2}
+${font Sans:size=10}${color Grey}Network ${color Grey}${hr 2}
+$font${color DimGray}IP on ${gw_iface}$alignr ${addr wlan0}
+Strength $alignr${wireless_link_qual wlan0} %
+#$font${color DimGray}External IP $alignr ${exec curl -s www.icanhazip.com}
+
+Down $alignr ${downspeed wlan0}/s
+#Graph DOWN
+Downloaded: $alignr${totaldown wlan0}
+ ${color Grey}${downspeedgraph wlan0 -l}
+${font Sans:size=8}${color Grey} ${color Grey}${hr 2}
+#Graph UP
+$font${color DimGray}Up $alignr ${upspeed wlan0}/s
+Uploaded: $alignr${totalup wlan0}
+ ${color Grey}${upspeedgraph wlan0 -l}
+#Battery
+${font Sans:size=10}${color Grey} Battery ${color Grey}${hr 2}
+$font${color DimGray} Status  $alignr     ${battery BAT1}
+$font${color DimGray}${offset 0} ${battery_bar BAT1}

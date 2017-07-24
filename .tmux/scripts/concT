@@ -1,0 +1,22 @@
+#!/bin/sh
+cd ~/Documents/ConcurrentComputing/question/
+
+SESSION_NAME="Concurrent_Computing"
+tmux new-session -s ${SESSION_NAME} -n 'Vim' -d
+tmux send-keys   'vim .' C-m
+
+tmux new-window -n 'Shell$'
+
+tmux split-window -h -p 50
+tmux selectp -t 1
+tmux send-keys 'make launch-qemu' C-m
+
+tmux selectp -t 0
+tmux send-keys 'make launch-gdb' C-m
+
+tmux split-window -v -p 50
+tmux selectp -t 1
+tmux send-keys 'nc 127.0.0.1 1235' C-m
+
+tmux attach -t ${SESSION_NAME}
+

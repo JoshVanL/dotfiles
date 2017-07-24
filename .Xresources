@@ -1,0 +1,87 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+Xft.lcdfilter:              lcddefault
+
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            50
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+! Fonts
+URxvt.allow_bold:           false
+/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
+URxvt.font: xft:Menlo\ for\ Powerline:size=10
+
+! Fix font space
+URxvt*letterSpace: -2
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+!!Source http://github.com/altercation/solarized
+
+*background: #282828
+*foreground: #f8f6f2
+*cursorColor: #aeee00
+*scrollColor: #45413b
+*fadeColor: #ffffff
+*fading: 20
+
+! black
+*color0: #141413
+*color8: #000000
+! red
+*color1: #ff2c4b
+*color9: #ff2c4b
+! green
+*color2: #aeee00
+*color10: #aeee00
+! yellow
+*color3: #fade3e
+*color11: #ffa724
+! blue
+*color4: #0a9dff
+*color12: #fa9dff
+! magenta
+*color5: #ff9eb8
+*color13: #ff9eb8
+! cyan
+*color6:  #3e53a8
+*color14: #3e53a8
+! white
+*color7: #d9cec3
+*color15: #ffffff
