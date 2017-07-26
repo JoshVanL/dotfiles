@@ -220,7 +220,7 @@ bindsym $mod+Mod1+0     gaps inner all set   0; gaps outer all set 0; border pix
 
 # Client shortcuts
 bindsym $mod+Shift+c exec chromium
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f exec firefox-nightly
 bindsym $mod+Shift+s exec --no-startup-id spotify --class Spotify
 bindsym $mod+Shift+a exec slack --class Slack
 bindsym $mod+Shift+g exec gimp
