@@ -39,9 +39,21 @@ $full_text = "$percent%";
 
 if ($status eq 'Discharging') {
 	$full_text .= ' DIS';
+    #if ($percent > 95) {
+    #    print " ";
+    #} elsif ($percent >= 75) {
+    #    print " ";
+    #} elsif ($percent >= 50) {
+    #    print " ";
+    #} elsif ($percent >= 20) {
+    #    print " ";
+    #} elsif ($percent >= 0) {
+    #    print " ";
+    #}
 } elsif ($status eq 'Charging') {
 	$full_text .= ' CHR';
 }
+    print `~/scripts/batCharging.sh`;
 
 $short_text = $full_text;
 
@@ -50,17 +62,6 @@ if ($acpi =~ /(\d\d:\d\d):/) {
 }
 
 
-if ($percent > 95) {
-    print " ";
-} elsif ($percent >= 75) {
-    print " ";
-} elsif ($percent >= 50) {
-    print " ";
-} elsif ($percent >= 20) {
-    print " ";
-} elsif ($percent >= 0) {
-    print " ";
-}
 
 # print text
 print "$full_text\n";
