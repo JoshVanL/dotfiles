@@ -105,7 +105,6 @@ then
     charging
     printf "  $percent%%"
     printf " CHR $(echo $acpi | grep -o '[0-9]:[0-9][0-9]')"
-    exit
 else
     other
     printf "  $percent%%"
