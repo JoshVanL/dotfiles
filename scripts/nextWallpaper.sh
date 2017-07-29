@@ -9,5 +9,3 @@ then
 fi
 
 echo $curr > "/home/josh/scripts/currWall"
-
-echo /home/josh/Wallpapers/a$curr.jpg

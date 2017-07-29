@@ -181,7 +181,7 @@ bindsym $mod+Shift+Delete exec --no-startup-id "$HOME/scripts/lock.sh $HOME/Pict
 
 # Wallpaper
 #exec_always --no-startup-id feh --bg-scale ~/Wallpapers/Wall12.jpeg
-set $wall $(/home/josh/scripts/nextWallpaper.sh)
+set $wall $(/home/josh/scripts/currWallpaper.sh)
 exec_always --no-startup-id feh --bg-scale $wall
 
 # Default window setup
@@ -233,3 +233,8 @@ bindsym $mod+Shift+plus exec --no-startup-id ~/scripts/screenshot.sh
 
 # Work startup script
 bindsym $mod+Shift+i exec --no-startup-id ~/scripts/chrom  --class Chromium; exec --no-startup-id slack --class Slack; exec termite
+
+# Cycle Wallpaper
+bindsym $mod+w exec --no-startup-id ~/scripts/nextWallpaper.sh; exec --no-startup-id feh --bg-scale $wall
+bindsym $mod+Shift+w exec --no-startup-id ~/scripts/prevWallpaper.sh; exec --no-startup-id feh --bg-scale $wall
+
