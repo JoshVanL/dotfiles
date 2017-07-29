@@ -41,7 +41,7 @@ close(MPSTAT);
 $cpu_usage eq -1 and die 'Can\'t find CPU information';
 
 # Print short_text, full_text
-printf "%.2f%%\n", $cpu_usage;
+printf "cpu. %.2f%% .%.2f\n", $cpu_usage, get_load_average();
 printf "%.2f%%\n", $cpu_usage;
 
 # Print color, if needed
@@ -52,4 +52,11 @@ if ($cpu_usage >= $t_crit) {
     print "#FFFC00\n";
 }
 
-exit 0;
+
+sub get_load_average {
+  open(LOAD, "/proc/loadavg") or die "Unable to get server load \n";
+  my $load_avg = <LOAD>;
+  close LOAD;
+  my ( $one_min_avg ) = split /\s/, $load_avg;
+  return $one_min_avg;
+}

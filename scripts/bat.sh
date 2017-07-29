@@ -104,20 +104,22 @@ if [[ $(echo $acpi | grep -o "Charging") == "Charging" ]]
 then
     charging
     printf "  $percent%%"
-    printf " CHR $(echo $acpi | grep -o '[0-9]:[0-9][0-9]')"
+    printf " c."
+    #$(echo $acpi | grep -o '[0-9]:[0-9][0-9]')"
 else
     other
     printf "  $percent%%"
     if [[ $(echo $acpi | grep -o "Discharging") == "Discharging" ]]
     then
-        printf " DIS $(echo $acpi | grep -o '[0-9]:[0-9][0-9]')"
+        printf " d."
+        ##$(echo $acpi | grep -o '[0-9]:[0-9][0-9]')"
     fi
 fi
 
 
 if [ $percent -ge 97 ]
 then
-	printf "\n\n#FF0000\n"
+	printf "\n\n#FFFFFF\n"
 elif [ $percent -ge 90 ]
 then
 	printf "\n\n#a2ff6d\n"
