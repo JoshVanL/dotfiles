@@ -54,10 +54,20 @@ volume() {
 format() {
     array=$(amixer get Master |grep % |awk '{print $5}'|sed 's/[^0-9]//g')
     mute=$(amixer get Master |grep % |awk '{print $6}'| { read first rest ; echo $first ; })
+    arraym=$(amixer get Capture |grep % |awk '{print $5}'|sed 's/[^0-9]//g')
+    mutem=$(amixer get Capture |grep % |awk '{print $6}'| { read first rest ; echo $first ; })
+
+    if [ $mutem == "[on]" ]
+    then
+        printf " "
+    else
+        printf " "
+    fi
 
     if [ $mute == "[off]" ]
     then
-        echo "   MUTE"
+        printf "  \n\n#ff6961"
+        exit
     fi
 
     NUM=( $array[0] )
@@ -71,12 +81,7 @@ format() {
     else
         echo  $NUM%
     fi
-    #perl_filter='if (/.*\[(\d+%)\] (\[(-?\d+.\d+dB)\] )?\[(on|off)\]/)'
-    #perl_filter+='{CORE::say $4 eq "off" ? "MUTE" : "'
-    ## If dB was selected, print that instead
-    #perl_filter+=$([[ $STEP = *dB ]] && echo '$3' || echo ' $1')
-    #perl_filter+='"; exit}'
-    #perl -ne "$perl_filter"
+
 }
 
 #------------------------------------------------------------------------

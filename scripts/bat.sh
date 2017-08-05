@@ -50,7 +50,7 @@ function charging {
         then
             echo  $q2 > $path
             printf $q2
-        elif [[ $curr == $q3 ]]
+        elif [[ $curr == $q2 ]]
         then
             echo $q3 > $path
             printf $q3
@@ -70,7 +70,7 @@ function charging {
         elif [[ $curr == $q1 ]]
         then
             echo $q2 > $path
-            printf $q2;
+            printf $q2
         elif [[ $curr == $q2 ]]
         then
             echo $q3 > $path
