@@ -119,7 +119,7 @@ fi
 
 if [ $percent -ge 97 ]
 then
-	printf "\n\n#FFFFFF\n"
+	printf "\n\n#DDDDDD\n"
 elif [ $percent -ge 90 ]
 then
 	printf "\n\n#a2ff6d\n"

@@ -143,7 +143,7 @@ client.urgent               $bg-colorW       $bg-colorW       $text-colorW      
 # i3 status bar setup
 set $bg-color 	         #222222
 set $inactive-bg-color   #111111
-set $text-color          #f3f4f5
+set $text-color          #aaaaaa
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
@@ -184,7 +184,7 @@ bindsym $mod+Shift+Delete exec --no-startup-id "$HOME/scripts/lock.sh $HOME/Pict
 # Wallpaper
 #exec_always --no-startup-id feh --bg-scale ~/Wallpapers/Wall12.jpeg
 
-exec_always --no-startup-id ~/scripts/nextWallpaper.sh
+exec_always --no-startup-id ~/scripts/Wallpaper.sh +1
 set $wall $(~/scripts/currWallpaper.sh)
 exec_always --no-startup-id feh --bg-scale $wall
 
@@ -243,6 +243,6 @@ bindsym $mod+Shift+plus exec --no-startup-id ~/scripts/screenshot.sh
 bindsym $mod+Shift+i exec --no-startup-id ~/scripts/chrom  --class Chromium; exec --no-startup-id slack --class Slack; exec termite
 
 # Cycle Wallpaper
-bindsym $mod+w exec --no-startup-id ~/scripts/nextWallpaper.sh; exec --no-startup-id feh --bg-scale $wall
-bindsym $mod+Shift+w exec --no-startup-id ~/scripts/prevWallpaper.sh; exec --no-startup-id feh --bg-scale $wall
+bindsym $mod+w exec --no-startup-id ~/scripts/Wallpaper.sh +1; exec --no-startup-id feh --bg-scale $wall
+bindsym $mod+Shift+w exec --no-startup-id ~/scripts/Wallpaper.sh -1; exec --no-startup-id feh --bg-scale $wall
 

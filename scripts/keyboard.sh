@@ -8,4 +8,5 @@ xset r rate 150 50
 
 xset m 4/1 0
 
-twmnc -c 'Keyboard Set' -i ~/.config/twmn/keyboard.png
+twmnc -c 'Keyboard Set'
+#-i ~/.config/twmn/keyboard.png

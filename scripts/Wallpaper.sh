@@ -1,7 +1,7 @@
 #!/bin/bash
 
 curr=$(cat "/home/josh/scripts/currWall" )
-curr=$(( $curr - 1 ))
+curr=$(( $curr $1 ))
 
 findF () {
     if [[ ! -f /home/josh/Wallpapers/a$curr.jpg ]]
@@ -15,6 +15,11 @@ if [ $curr -lt 0 ]
 then
     curr=100
     findF
+fi
+
+if [[ ! -f /home/josh/Wallpapers/a$curr.jpg ]]
+then
+    curr=0
 fi
 
 echo $curr > "/home/josh/scripts/currWall"
