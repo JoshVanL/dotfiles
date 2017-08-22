@@ -93,6 +93,7 @@ client.urgent               $bg-colorW       $bg-colorW       $text-colorW      
 
 # i3 status bar setup
 set $transparent         #22222299
+set $v-transparent       #22222233
 set $bg-color 	         #1a1a1a99
 set $inactive-bg-color   #33333399
 set $text-color          #EEEEEE
@@ -101,9 +102,9 @@ set $urgent-bg-color     #994444
 
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    tray_padding 0
-    tray_output eDP1
-    tray_output LVDS-0
+    tray_padding 5
+    #tray_output eDP0
+    #tray_output LVDS-0
     i3bar_command i3bar -t
     position top
     height 26
@@ -112,7 +113,7 @@ bar {
 	    background  $transparent
 	    separator   #979797
 	    #                  border             background         text
-	    focused_workspace  $transparent          $bg-color          $text-color
+	    focused_workspace  $v-transparent      $v-transparent          $text-color
 	    inactive_workspace $transparent        $inactive-bg-color $inactive-text-color
 	    urgent_workspace   $transparent        $urgent-bg-color   $text-color
 	}
@@ -151,7 +152,7 @@ exec_always --no-startup-id feh --bg-scale $wall
 # Default window setup
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
-gaps inner 20
+gaps inner 30
 #gaps inner 20
 gaps outer 0
 #gaps outer 20

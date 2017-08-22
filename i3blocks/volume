@@ -59,9 +59,9 @@ format() {
 
     if [ $mutem == "[on]" ]
     then
-        printf " "
+        printf "  "
     else
-        printf " "
+        printf "  "
     fi
 
     if [ $mute == "[off]" ]

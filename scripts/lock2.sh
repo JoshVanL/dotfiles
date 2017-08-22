@@ -3,9 +3,10 @@
 B='#00000000'  # blank
 C='#00000000'  # clear ish
 D='#aaaaae00'  # default
-T='#DDDDDDDD'  # text
+#T='#888888FF'  # text
+T='#222222FF'  # text
 W='#66666666'  # wrong
-V='#DDDDDDDD'  # verifying
+V='#888888DD'  # verifying
 
 i3lock              \
 --insidevercolor=$C   \
@@ -26,15 +27,16 @@ i3lock              \
 --bshlcolor=$W        \
 \
 --screen 0            \
---blur 5              \
+--blur 10              \
 --clock               \
 --indicator           \
+--timefont=unifont    \
+--datefont=unifont    \
 --timestr="%H:%M:%S"  \
 --datestr="%A, %m %Y" \
 --veriftext=". . ."   \
---wrongtext="bad pass"
-#--textsize=15
+--wrongtext="bad pass" \
+--timesize 32           \
+--datesize 17           \
 # --modsize=10
-# --timefont=comic-sans
-# --datefont=monofur
 # etc

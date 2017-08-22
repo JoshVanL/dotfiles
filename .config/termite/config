@@ -7,7 +7,6 @@
 
 [options]
     font = Menlo for Powerline 13.5px
-    #font =  Ubuntu Mono derivative Powerline 14px
     resize_grip = false
     scroll_on_output = false
     scroll_on_keystroke = true
@@ -42,7 +41,7 @@
     #foreground_bold = #ffffff
     #foreground_dim = #888888
     background = #282828
-    cursor = #657b83
+    cursor = #657b7b
 
     # if unset, will reverse foreground and background
     highlight = #2f2f2f
@@ -50,14 +49,14 @@
     color0 = #000000
     color1 = #AA0000
     color2 = #00AA00
-    color3 = #AA5500
+    color3 = #458588
     color4 = #0000AA
     color5 = #AA00AA
     color6 = #00AAAA
     color7 = #AAAAAA
     color8 = #555555
     color9 = #f97575
-    color10 = #55FF55
+    color10 = #d3869b
     color11 = #FFFF55
     color12 = #24AAAA
     color13 = #FF55FF
