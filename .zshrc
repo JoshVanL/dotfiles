@@ -99,7 +99,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-source ~/dotfiles/powerless/powerless.zsh
+source ~/dotfiles/powerless.zsh
 
 export PATH=~/.npm-global/bin:$PATH
 
@@ -116,3 +116,6 @@ alias feha='feh --scale-down --auto-zoom'
 
 export PATH=$PATH:/home/josh/go/bin
 export GOPATH=$GOPATH:/home/josh/go/src
+
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"

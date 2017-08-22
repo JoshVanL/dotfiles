@@ -59,7 +59,7 @@ precmd-powerless() {
   last_code=$?
 
   if [[ $is_first_prompt -eq 999 ]]; then
-    echo -n "\n"
+    #echo -n "\n"
   else
     is_first_prompt=999
   fi
