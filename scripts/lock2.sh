@@ -4,9 +4,9 @@ B='#00000000'  # blank
 C='#00000000'  # clear ish
 D='#aaaaae00'  # default
 #T='#888888FF'  # text
-T='#222222FF'  # text
+T='#ffd1dcFF'  # text
 W='#66666666'  # wrong
-V='#888888DD'  # verifying
+V='#ffd1dcDD'  # verifying
 
 i3lock              \
 --insidevercolor=$C   \

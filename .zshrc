@@ -117,5 +117,6 @@ alias feha='feh --scale-down --auto-zoom'
 export PATH=$PATH:/home/josh/go/bin
 export GOPATH=$GOPATH:/home/josh/go/src
 
+
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"

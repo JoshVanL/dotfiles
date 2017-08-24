@@ -60,6 +60,9 @@ Plugin 'git://github.com/bronson/vim-trailing-whitespace.git'
 " Tagbar
 Plugin 'git://github.com/majutsushi/tagbar'
 
+"Puppet highlighting
+Plugin 'git://github.com/puppetlabs/puppet-syntax-vim.git'
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -144,14 +147,14 @@ set ttimeoutlen=20
 :set statusline+=%*
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_enable_signs = 0
-"let g:syntastic_echo_current_error = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_echo_current_error = 0
 "let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
-"nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode
 
 
 
