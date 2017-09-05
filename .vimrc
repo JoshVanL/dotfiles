@@ -1,5 +1,3 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
 "set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -63,10 +61,18 @@ Plugin 'git://github.com/majutsushi/tagbar'
 "Puppet highlighting
 Plugin 'git://github.com/puppetlabs/puppet-syntax-vim.git'
 
+"Ruby highlighting
+"Plugin 'vim-ruby/vim-ruby'
+
 call vundle#end()            " required
 
+set nocompatible              " be iMproved, required
+syntax on
+"filetype on
 filetype plugin indent on    " required
 filetype plugin on
+"filetype off                  " required
+
 
 "no <left> <Nop>
 "no <right> <Nop>
@@ -87,8 +93,6 @@ set shiftround                  "Round indent to nearest shiftwidth multiple
 
 set laststatus=2
 set t_Co=256
-syntax on
-filetype plugin indent on
 set background=dark
 set encoding=utf-8
 colorscheme gruvbox

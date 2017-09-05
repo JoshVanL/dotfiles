@@ -6,4 +6,6 @@ xset m 4/1 0
 
 xrdb ~/.Xresources
 
+/home/josh/scripts/watchJack.sh &
+
 exec i3

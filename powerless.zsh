@@ -17,13 +17,14 @@ powerless_color_git="240"
 # Specify common variables.
 prompt_char='$'
 rc='%{%f%k%}'
+return_code='%{%K{$powerless_color_git}%} %?'
 
 get-user-host() {
   echo -n "%{%F{$1}%K{$2}%} %n$([[ -n "$SSH_CLIENT" ]] && echo -n '@%M') $rc"
 }
 
 get-pwd() {
-  echo -n "%{%F{$1}%K{$2}%} %~ $rc"
+  echo -n "%{%F{$1}%K{$2}%} %~ $return_code $rc"
 }
 
 get-git-info() {
@@ -34,7 +35,7 @@ get-git-info() {
 
     [[ "$?" != "0" ]] && git_symbols="*"
 #"❗ "
-    echo -n "%{%F{$1}%K{$2}%} $git_branch$git_symbols $rc"
+    echo -n "%{%F{$1}%K{$2}%}$git_branch$git_symbols $rc"
   fi
 }
 
@@ -49,7 +50,7 @@ get-prompt() {
 
 powerless-prompt() {
   get-user-host $powerless_color_text $powerless_color_user_host
-  get-last-code $powerless_color_text $powerless_color_code_wrong
+  #get-last-code $powerless_color_text $powerless_color_code_wrong
   get-pwd $powerless_color_text $powerless_color_pwd
   get-git-info $powerless_color_text $powerless_color_git
   get-prompt
