@@ -6,7 +6,7 @@
 # ----------------------------------------------------------------------
 
 [options]
-    font = Menlo for Powerline 13.5px
+    font = Menlo for Powerline 12px
     resize_grip = false
     scroll_on_output = false
     scroll_on_keystroke = true
@@ -52,13 +52,13 @@
     color3 = #458588
     color4 = #008fAA
     color5 = #AA00AA
-    color6 = #00AAAA
+    color6 = #44BFBF
     color7 = #AAAAAA
     color8 = #555555
     color9 = #f97575
     color10 = #d3869b
     color11 = #FFFF55
-    color12 = #24AAAA
+    color12 = #8ec6cf
     color13 = #FF55FF
     color14 = #f3427f
     color15 = #AAAAAA

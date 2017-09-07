@@ -9,9 +9,12 @@ ZLE_RPROMPT_INDENT=0
 
 # Specify colors.
 powerless_color_text="0"
-powerless_color_user_host="133"
+#powerless_color_user_host="133"
+powerless_color_user_host="250"
+powerless_color_user_host2="139"
 powerless_color_code_wrong="162"
-powerless_color_pwd="139"
+#powerless_color_pwd="139"
+powerless_color_pwd="245"
 powerless_color_git="240"
 
 # Specify common variables.
@@ -20,7 +23,7 @@ rc='%{%f%k%}'
 return_code='%{%K{$powerless_color_git}%} %?'
 
 get-user-host() {
-  echo -n "%{%F{$1}%K{$2}%} %n$([[ -n "$SSH_CLIENT" ]] && echo -n '@%M') $rc"
+  echo -n "%{%F{$1}%K{$2}%} %n %{%F{$1}%K{$3}%} $(hostname)$([[ -n "$SSH_CLIENT" ]] && echo -n '@%M') $rc"
 }
 
 get-pwd() {
@@ -49,7 +52,7 @@ get-prompt() {
 }
 
 powerless-prompt() {
-  get-user-host $powerless_color_text $powerless_color_user_host
+  get-user-host $powerless_color_text $powerless_color_user_host $powerless_color_user_host2
   #get-last-code $powerless_color_text $powerless_color_code_wrong
   get-pwd $powerless_color_text $powerless_color_pwd
   get-git-info $powerless_color_text $powerless_color_git
