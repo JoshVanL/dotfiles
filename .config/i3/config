@@ -153,10 +153,10 @@ exec_always --no-startup-id feh --bg-scale $wall
 # Default window setup
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
-gaps inner 30
-#gaps inner 20
-gaps outer 20
+#gaps inner 30
+gaps inner 15
 #gaps outer 20
+gaps outer 10
 new_window pixel 1
 
 for_window [class="^.*"] border pixel 0
@@ -186,6 +186,7 @@ bindsym $mod+Mod1+Left  gaps inner all minus 5
 bindsym $mod+Mod1+Up    gaps outer all plus  5
 bindsym $mod+Mod1+Down  gaps outer all minus 5
 bindsym $mod+Mod1+0     gaps inner all set   0; gaps outer all set 0; border pixel 0
+bindsym $mod+Ctrl+0     gaps inner all set  15; gaps outer all set 15; border pixel 0
 
 # Client shortcuts
 bindsym $mod+Shift+c exec --no-startup-id chromium
