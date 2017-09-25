@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-echo ${$(xbacklight)%.*}
+echo ${$(light)%.*}

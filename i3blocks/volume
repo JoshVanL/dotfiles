@@ -52,10 +52,10 @@ volume() {
 }
 
 format() {
-    array=$(amixer get Master |grep % |awk '{print $5}'|sed 's/[^0-9]//g')
+    array=$(amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9]//g')
     mute=$(amixer get Master |grep % |awk '{print $6}'| { read first rest ; echo $first ; })
     arraym=$(amixer get Capture |grep % |awk '{print $5}'|sed 's/[^0-9]//g')
-    mutem=$(amixer get Capture |grep % |awk '{print $6}'| { read first rest ; echo $first ; })
+    mutem=$(amixer get Capture |grep % |awk '{print $7}'| { read first rest ; echo $first ; })
 
     if [ $mutem == "[on]" ]
     then
@@ -70,7 +70,7 @@ format() {
         exit
     fi
 
-    NUM=( $array[0] )
+    NUM=( ${array[0]%:*} )
 
     if [ $NUM -gt 50 ]
     then

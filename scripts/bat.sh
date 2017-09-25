@@ -12,7 +12,7 @@ path="/home/josh/scripts/currBat"
 curr=$(cat $path)
 
 function charging {
-    if [ $percent -gt 95 ]
+    if [ $percent -eq 100 ]
     then
         echo $q4 > $path
         printf $q4
@@ -104,16 +104,9 @@ if [[ $(echo $acpi | grep -o "Charging") == "Charging" ]]
 then
     charging
     printf "  $percent%%"
-    printf " c."
-    #$(echo $acpi | grep -o '[0-9]:[0-9][0-9]')"
 else
     other
     printf "  $percent%%"
-    if [[ $(echo $acpi | grep -o "Discharging") == "Discharging" ]]
-    then
-        printf " d."
-        ##$(echo $acpi | grep -o '[0-9]:[0-9][0-9]')"
-    fi
 fi
 
 
@@ -123,24 +116,21 @@ then
 elif [ $percent -ge 90 ]
 then
 	printf "\n\n#a2ff6d\n"
-elif [ $percent -ge 80 ]
-then
-    printf "\n\n#bff466\n"
 elif [ $percent -ge 70 ]
 then
-	printf "\n\n#ebf466\n"
+    printf "\n\n#bff466\n"
 elif [ $percent -ge 60 ]
 then
-	printf "\n\n#ffb55b\n"
+	printf "\n\n#ebf466\n"
 elif [ $percent -ge 50 ]
 then
-    printf "\n\n#ffaf7f\n"
+	printf "\n\n#ffb55b\n"
 elif [ $percent -ge 40 ]
 then
-	printf "\n\n#ff5656\n"
+    printf "\n\n#ffaf7f\n"
 elif [ $percent -ge 30 ]
 then
-	printf "\n\n#ff2828\n"
+	printf "\n\n#ff5656\n"
 elif [ $percent -ge 20 ]
 then
     printf "\n\n#ff3a3a\n"

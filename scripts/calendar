@@ -54,11 +54,11 @@ echo  "$out" | dzen2 \
   -title-name "calendar" \
   -bg "$color0" \
   -fg "$color5" \
-  -x "-195" \
-  -y 22 \
-  -h 25 \
+  -x "-200" \
+  -y 40 \
+  -h 40 \
   -l $((lines-1)) \
-  -w 190 \
+  -w 400 \
   -fn "System San Fransisco Display:size=9" \
   -e "onstart=uncollapse;button3=exit" \
   -ta c \

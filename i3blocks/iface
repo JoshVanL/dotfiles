@@ -36,7 +36,7 @@ fi
 #fi
 #------------------------------------------------------------------------
 
-if [[ "$(cat /sys/class/net/enp2s0f0/operstate)" = 'down' ]] && [[ "$(cat /sys/class/net/wlp3s0/operstate)" = 'down' || "$(cat /sys/class/net/wlp3s0/operstate)" = 'dormant' ]]; then
+if [[ ! -d /sys/class/net/enp0s20f0u2/ ]] && [[ "$(cat /sys/class/net/wlp58s0/operstate)" = 'down' || "$(cat /sys/class/net/wlp58s0/operstate)" = 'dormant' ]]; then
   echo i.down # full text
   echo i.down # short text
   echo \#ff6961 # color

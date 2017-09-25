@@ -1,6 +1,6 @@
 set $mod Mod4
-font pango:unifont, Font Awesome 9
-#font pango:Font Awesome, DejaVu Sans 10
+#font pango:Font Awesome, Arial 9
+font pango:Font Awesome, System San Francisco Display 9
 
 floating_modifier $mod
 
@@ -13,7 +13,7 @@ bindsym $mod+Shift+Return split h; exec --no-startup-id termite; split v
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -font "System San Francisco Display 10" -show run
+bindsym $mod+d exec --no-startup-id rofi -font "Arial 26" -show run
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -93,49 +93,49 @@ client.focused_inactive     $bg-colorW       $bg-colorW       $inactive-text-col
 client.urgent               $bg-colorW       $bg-colorW       $text-colorW          $bg-colorW  $bg-colorW
 
 # i3 status bar setup
-set $transparent         #22222299
-set $v-transparent       #22222233
-set $bg-color 	         #1a1a1a99
-set $inactive-bg-color   #33333399
+set $transparent         #222222BB
+set $v-transparent       #22222255
+set $bg-color 	         #1a1a1aBB
+set $inactive-bg-color   #333333BB
 set $text-color          #EEEEEE
 set $inactive-text-color #AAAAAA
 set $urgent-bg-color     #994444
 
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    tray_padding 5
+    tray_padding 0
     #tray_output eDP0
     #tray_output LVDS-0
     i3bar_command i3bar -t
     position top
-    height 26
+    height 0
 	colors {
         statusline #FFFFFF
 	    background  $transparent
 	    separator   #979797
 	    #                  border             background         text
 	    focused_workspace  $v-transparent      $v-transparent          $text-color
-	    inactive_workspace $transparent        $inactive-bg-color $inactive-text-color
+	    inactive_workspace $transparent        $transparent $inactive-text-color
 	    urgent_workspace   $transparent        $urgent-bg-color   $text-color
 	}
 }
 
 
 # Sound controls
-bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle ; pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -M set Master 5%- ; pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -M set Master 5%+ ; pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioMute exec --no-startup-id /home/josh/scripts/mute.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id /home/josh/scripts/volume.sh 5 -
+bindsym XF86AudioRaiseVolume exec --no-startup-id /home/josh/scripts/volume.sh 5 +
 
-bindsym XF86Tools exec --no-startup-id "amixer set Capture toggle ; pkill -RTMIN+1 i3blocks"
+bindsym XF86Launch3 exec --no-startup-id "amixer set Capture toggle ; pkill -RTMIN+1 i3blocks"
 
 # Media player controls
-bindsym $mod+l exec --no-startup-id playerctl play-pause
-bindsym $mod+k exec --no-startup-id playerctl next
-bindsym $mod+j exec --no-startup-id playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Sreen brightness controls
-bindsym $mod+p exec --no-startup-id "xbacklight +10 ; pkill -RTMIN+2 i3blocks"
-bindsym $mod+o exec --no-startup-id "xbacklight -10 ; pkill -RTMIN+2 i3blocks"
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 10 ; pkill -RTMIN+2 i3blocks"
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10 ; pkill -RTMIN+2 i3blocks"
 
 
 # Lock screen script
@@ -144,19 +144,18 @@ bindsym $mod+Shift+Delete exec --no-startup-id ~/scripts/lock2.sh
 
 
 # Wallpaper
-#exec_always --no-startup-id feh --bg-scale ~/Wallpapers/Wall12.jpeg
-
-#exec_always --no-startup-id ~/scripts/Wallpaper.sh +1
 set $wall $(~/scripts/currWallpaper.sh)
 exec_always --no-startup-id feh --bg-scale $wall
+
+exec_always --no-startup-id xrandr --dpi 220
 
 # Default window setup
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
-#gaps inner 30
-gaps inner 15
-#gaps outer 20
-gaps outer 10
+gaps inner 30
+#gaps inner 15
+gaps outer 20
+#gaps outer 10
 new_window pixel 1
 
 for_window [class="^.*"] border pixel 0
@@ -171,7 +170,7 @@ assign [class="Spotify"] 5
 
 # Screen compositers
 exec --no-startup-id compton -f --config ~/.config/compton.cfg
-exec --no-startup-id redshift
+#exec --no-startup-id redshift
 exec --no-startup-id twmnd
 
 # Resize windows
@@ -186,24 +185,24 @@ bindsym $mod+Mod1+Left  gaps inner all minus 5
 bindsym $mod+Mod1+Up    gaps outer all plus  5
 bindsym $mod+Mod1+Down  gaps outer all minus 5
 bindsym $mod+Mod1+0     gaps inner all set   0; gaps outer all set 0; border pixel 0
-bindsym $mod+Ctrl+0     gaps inner all set  15; gaps outer all set 15; border pixel 0
+bindsym $mod+Ctrl+0     gaps inner all set  30; gaps outer all set 20; border pixel 0
 
 # Client shortcuts
-bindsym $mod+Shift+c exec --no-startup-id chromium
-bindsym $mod+Shift+f exec --no-startup-id firefox-nightly
-bindsym $mod+Shift+s exec --no-startup-id spotify --class Spotify
+bindsym $mod+Shift+c exec --no-startup-id chromium --force-device-scale-factor=2
+bindsym $mod+Shift+f exec --no-startup-id env MOZ_USE_XINPUT2=1 firefox-nightly
+bindsym $mod+Shift+s exec --no-startup-id spotify --class Spotify --force-device-scale-factor=2.0
 bindsym $mod+Shift+a exec slack --class Slack
 bindsym $mod+Shift+g exec --no-start-up gimp
 
 # Keyboard script when plugged in
-bindsym $mod+Shift+Prior exec --no-startup-id ~/scripts/keyboard.sh
+bindsym $mod+Shift+Insert exec --no-startup-id ~/scripts/keyboard.sh
 
 # nm-applet
 bindsym $mod+u exec --no-startup-id nm-applet
 bindsym $mod+y exec --no-startup-id killall nm-applet
 
 # Take a screenshot
-bindsym $mod+Shift+plus exec --no-startup-id ~/scripts/screenshot.sh
+bindsym Print exec --no-startup-id ~/scripts/screenshot.sh
 
 # Work startup script
 bindsym $mod+Shift+i exec --no-startup-id ~/scripts/chrom  --class Chromium; exec --no-startup-id slack --class Slack; exec termite

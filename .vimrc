@@ -17,13 +17,13 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'git://github.com/morhetz/gruvbox.git'
 
 "Haskell
-Plugin 'git://github.com/neovimhaskell/haskell-vim.git'
+"Plugin 'git://github.com/neovimhaskell/haskell-vim.git'
 
 "Indent Line
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 
 "JavaScript Indent
-Plugin 'git://github.com/pangloss/vim-javascript.git'
+"Plugin 'git://github.com/pangloss/vim-javascript.git'
 
 "Nerd Tree
 Plugin 'git://github.com/scrooloose/nerdtree.git'
@@ -32,19 +32,19 @@ Plugin 'git://github.com/scrooloose/nerdtree.git'
 Plugin 'git://github.com/vim-syntastic/syntastic.git'
 
 "Easy motion
-Plugin 'git://github.com/easymotion/vim-easymotion.git'
+"Plugin 'git://github.com/easymotion/vim-easymotion.git'
 
 "Vim Fugitive
 Plugin 'tpope/vim-fugitive'
 
 "Javascript Syntax
-Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'jelera/vim-javascript-syntax'
 
 "Colorizer
 Plugin 'git://github.com/chrisbra/Colorizer.git'
 
 "Latex
-Plugin 'git://github.com/xuhdev/vim-latex-live-preview.git'
+"Plugin 'git://github.com/xuhdev/vim-latex-live-preview.git'
 
 "Go
 Plugin 'fatih/vim-go'
@@ -57,10 +57,10 @@ Plugin 'git://github.com/Shougo/neocomplete.vim.git'
 Plugin 'git://github.com/bronson/vim-trailing-whitespace.git'
 
 " Tagbar
-Plugin 'git://github.com/majutsushi/tagbar'
+"Plugin 'git://github.com/majutsushi/tagbar'
 
 "Puppet highlighting
-Plugin 'git://github.com/puppetlabs/puppet-syntax-vim.git'
+"Plugin 'git://github.com/puppetlabs/puppet-syntax-vim.git'
 
 "Ruby highlighting
 "Plugin 'vim-ruby/vim-ruby'

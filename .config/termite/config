@@ -6,7 +6,8 @@
 # ----------------------------------------------------------------------
 
 [options]
-    font = Menlo for Powerline 12px
+    #font = xos4 Terminess Powerline 11
+    font = Menlo for Powerline 28px
     resize_grip = false
     scroll_on_output = false
     scroll_on_keystroke = true

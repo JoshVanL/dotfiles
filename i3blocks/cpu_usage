@@ -41,15 +41,15 @@ close(MPSTAT);
 $cpu_usage eq -1 and die 'Can\'t find CPU information';
 
 # Print short_text, full_text
-printf "cpu. %.2f%% .%.2f\n", $cpu_usage, get_load_average();
+printf "cpu %.2f%%\n", $cpu_usage, get_load_average();
 printf "%.2f%%\n", $cpu_usage;
 
 # Print color, if needed
 if ($cpu_usage >= $t_crit) {
-    print "#FF0000\n";
-    exit 33;
+    print "#ff6961\n";
+    #exit 33;
 } elsif ($cpu_usage >= $t_warn) {
-    print "#FFFC00\n";
+    print "#fdfd96\n";
 }
 
 
