@@ -125,8 +125,11 @@ bar {
 bindsym XF86AudioMute exec --no-startup-id /home/josh/scripts/mute.sh
 bindsym XF86AudioLowerVolume exec --no-startup-id /home/josh/scripts/volume.sh 5 -
 bindsym XF86AudioRaiseVolume exec --no-startup-id /home/josh/scripts/volume.sh 5 +
-
 bindsym XF86Launch3 exec --no-startup-id "amixer set Capture toggle ; pkill -RTMIN+1 i3blocks"
+bindsym $mod+Shift+P exec --no-startup-id pavucontrol
+
+bindsym $mod+Shift+B exec --no-startup-id sudo /home/josh/scripts/toggleBluetooth.sh
+
 
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause

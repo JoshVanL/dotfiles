@@ -57,6 +57,12 @@ format() {
     arraym=$(amixer get Capture |grep % |awk '{print $5}'|sed 's/[^0-9]//g')
     mutem=$(amixer get Capture |grep % |awk '{print $7}'| { read first rest ; echo $first ; })
 
+
+    if [ $(systemctl is-active bluetooth.service) == "active" ]
+    then
+        printf "  "
+    fi
+
     if [ $mutem == "[on]" ]
     then
         printf "  "
