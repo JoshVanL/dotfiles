@@ -176,6 +176,8 @@ exec --no-startup-id compton -f --config ~/.config/compton.cfg
 #exec --no-startup-id redshift
 exec --no-startup-id twmnd
 
+exec --no-startup-id rfkill block 0
+
 # Resize windows
 bindsym $mod+Ctrl+Down  resize grow   height 1 px or 1 ppt
 bindsym $mod+Ctrl+Up    resize shrink height 1 px or 1 ppt
