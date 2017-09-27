@@ -4,7 +4,7 @@ B='#00000000'  # blank
 C='#00000000'  # clear ish
 D='#aaaaae00'  # default
 #T='#888888FF'  # text
-T='#fbbaafFF'  # text
+T='#ff4477FF'  # text
 W='#66666666'  # wrong
 V='#ffd1dcDD'  # verifying
 

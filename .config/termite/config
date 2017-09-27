@@ -42,7 +42,8 @@
     #foreground_bold = #ffffff
     #foreground_dim = #888888
     background = #282828
-    cursor = #657b7b
+    #cursor = #657b7b
+    cursor = #555555
 
     # if unset, will reverse foreground and background
     highlight = #2f2f2f

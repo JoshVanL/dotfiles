@@ -215,4 +215,3 @@ bindsym $mod+Shift+i exec --no-startup-id ~/scripts/chrom  --class Chromium; exe
 # Cycle Wallpaper
 bindsym $mod+w exec --no-startup-id "~/scripts/Wallpaper.sh +1; feh --bg-scale $wall; pkill -RTMIN+2 i3blocks"
 bindsym $mod+Shift+w exec --no-startup-id "~/scripts/Wallpaper.sh -1; feh --bg-scale $wall; pkill -RTMIN+2 i3blocks"
-

@@ -20,7 +20,7 @@ Plugin 'git://github.com/morhetz/gruvbox.git'
 "Plugin 'git://github.com/neovimhaskell/haskell-vim.git'
 
 "Indent Line
-"Plugin 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
 
 "JavaScript Indent
 "Plugin 'git://github.com/pangloss/vim-javascript.git'
@@ -69,16 +69,8 @@ call vundle#end()            " required
 
 set nocompatible              " be iMproved, required
 syntax on
-"filetype on
 filetype plugin indent on    " required
 filetype plugin on
-"filetype off                  " required
-
-
-"no <left> <Nop>
-"no <right> <Nop>
-"no <up> <Nop>
-"no <down> <Nop>
 
 let mapleader = ","
 
@@ -101,8 +93,6 @@ colorscheme gruvbox
 "power-line
 let g:airline_powerline_fonts = 1
 
-"let g:airline_theme='base16_grayscale'
-"let g:airline_theme='minimalist'
 let g:airline_theme='gruvbox'
 
 let g:powerline_symbols = "fancy"
@@ -110,6 +100,9 @@ set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
+endif
+if !exists("g:syntax_on")
+    syntax enable
 endif
 
 " unicode symbols
@@ -138,46 +131,9 @@ let g:airline_symbols.linenr = ''
 
 set ttimeoutlen=20
 
-":set cindent
-
-
-:set tabstop=4
-:set shiftwidth=4
-
 :map <silent> <C-m> :VimShellPop<CR><ESC>:wincmd J<CR>
 
-"Syntastic
-":set statusline+=%#warningmsg#
-":set statusline+=%{SyntasticStatuslineFlag()}
-":set statusline+=%*
-
-"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 1
-"let g:syntastic_enable_signs = 1
-"let g:syntastic_echo_current_error = 0
-"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []  }
-"nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode
-
-
-
 :set noshowmode
-
-" Enable omni completion.
-"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType go setlocal omnifunc=golangcomplete#CompleteTags
-
-
-"easymotion
-"let g:EasyMotion_do_mapping = 1
-"let g:EasyMotioj
-
 "Mouse moves splits
 set mouse=a
 
@@ -208,12 +164,12 @@ cmap w!! w !sudo tee > /dev/null %
 cmap gg GoBuild <CR>
 cmap tt !go test -v <CR>
 
-"Indent Line char
-let g:indentLine_char = '¦'
-
 
 " Copy/Paste to system clipboard
 vmap <C-c> "+y
 vmap <C-x> "+c
 vmap <C-v> <ESC>"+p
 imap <C-v> <ESC>"+pa
+
+"Indent Line char
+let g:indentLine_char = '¦'

@@ -8,15 +8,15 @@ rbenv_version() {
   rbenv version 2>/dev/null | awk '{print $1}'
 }
 
-PROMPT='
-%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%}
+
+PROMPT='%{%F{250}%}%n %{%F{240}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{240}%}% - %{%F{250}%}% %? %{%F{240}%}% - %{%F{245}%}%*%{%F{255}%}
 $ '
 
 # Must use Powerline font, for \uE0A0 to render.
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}\uE0A0 "
+ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{240}%}%  - %{%F{250}%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+ZSH_THEME_GIT_PROMPT_DIRTY="*"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 if [ -e ~/.rvm/bin/rvm-prompt ]; then

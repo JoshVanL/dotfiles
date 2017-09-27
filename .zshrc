@@ -8,6 +8,7 @@ ZSH=~/oh-my-zsh/
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="me"
+ZSH_THEME="amuse"
 
 
 case $- in *i*)
@@ -99,7 +100,7 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-source ~/dotfiles/powerless.zsh
+#source ~/dotfiles/powerless.zsh
 
 export PATH=~/.npm-global/bin:$PATH
 
