@@ -110,27 +110,27 @@ else
 fi
 
 
-if [ $percent -ge 97 ]
+if [ $percent -ge 99 ]
 then
 	printf "\n\n#FFFFFF\n"
 elif [ $percent -ge 90 ]
 then
-	printf "\n\n#a2ff6d\n"
+	printf "\n\n#ccffcc\n"
 elif [ $percent -ge 70 ]
 then
-    printf "\n\n#bff466\n"
+    printf "\n\n#bbffbb\n"
 elif [ $percent -ge 60 ]
 then
-	printf "\n\n#ebf466\n"
+	printf "\n\n#ddffaa\n"
 elif [ $percent -ge 50 ]
 then
-	printf "\n\n#ffb55b\n"
+	printf "\n\n#eeffaa\n"
 elif [ $percent -ge 40 ]
 then
-    printf "\n\n#ffaf7f\n"
+    printf "\n\n#ffdd77\n"
 elif [ $percent -ge 30 ]
 then
-	printf "\n\n#ff5656\n"
+	printf "\n\n#ffbb44\n"
 elif [ $percent -ge 20 ]
 then
     printf "\n\n#ff3a3a\n"

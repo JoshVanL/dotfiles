@@ -77,7 +77,7 @@ let mapleader = ","
 :set number
 
 "Tab specific option
-set tabstop=8                   "A tab is 8 spaces
+set tabstop=4                   "A tab is 8 spaces
 set expandtab                   "Always uses spaces instead of tabs
 set softtabstop=4               "Insert 4 spaces when tab is pressed
 set shiftwidth=4                "An indent is 4 spaces
@@ -131,7 +131,7 @@ let g:airline_symbols.linenr = ''
 
 set ttimeoutlen=20
 
-:map <silent> <C-m> :VimShellPop<CR><ESC>:wincmd J<CR>
+":map <silent> <C-m> :VimShellPop<CR><ESC>:wincmd J<CR>
 
 :set noshowmode
 "Mouse moves splits
@@ -173,3 +173,10 @@ imap <C-v> <ESC>"+pa
 
 "Indent Line char
 let g:indentLine_char = '¦'
+
+"Highlight search
+set hlsearch
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+"latext shortcut
+nnoremap <silent> <C-k> :!pdflatex % <CR> <CR>

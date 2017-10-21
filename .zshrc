@@ -107,8 +107,6 @@ export PATH=~/.npm-global/bin:$PATH
 export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 
-export GOPATH=~/go
-
 export VISUAL=vim
 export EDITOR=vim
 
@@ -116,8 +114,9 @@ alias kc=kubectl
 alias feha='feh --scale-down --auto-zoom'
 
 export PATH=$PATH:/home/josh/go/bin
-export GOPATH=$GOPATH:/home/josh/go/src
+export GOPATH=/home/josh/go
 
+export PATH=$PATH:/opt/intel/bin
 
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')

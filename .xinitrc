@@ -9,4 +9,6 @@ xrdb ~/.Xresources
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Natural Scrolling Enabled" 1
 xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 
+sudo /home/josh/scripts/toggleBluetooth.sh
+
 exec i3
