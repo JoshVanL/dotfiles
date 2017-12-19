@@ -11,4 +11,6 @@ xinput set-prop "DLL075B:01 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 
 sudo /home/josh/scripts/toggleBluetooth.sh
 
+libinput-gestures-setup start
+
 exec i3

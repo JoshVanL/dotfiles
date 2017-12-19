@@ -133,7 +133,7 @@ then
 	printf "\n\n#ffbb44\n"
 elif [ $percent -ge 20 ]
 then
-    printf "\n\n#ff3a3a\n"
+    printf "\n\n#ffaaaa\n"
 elif [ $percent -ge 10 ]
 then
     printf "\n\n#ff1c1c\n"

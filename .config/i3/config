@@ -23,6 +23,8 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+bindsym $mod+Tab exec echo "swap_focus" | nc --send-only -U "$XDG_RUNTIME_DIR/i3/event-listener.sock"
+exec --no-startup-id event-listener.py
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -67,6 +69,18 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
+bindsym $mod+Shift+Ctrl+1 move container to workspace 1;
+bindsym $mod+Shift+Ctrl+2 move container to workspace 2;
+bindsym $mod+Shift+Ctrl+3 move container to workspace 3;
+bindsym $mod+Shift+Ctrl+4 move container to workspace 4;
+bindsym $mod+Shift+Ctrl+5 move container to workspace 5;
+bindsym $mod+Shift+Ctrl+6 move container to workspace 6;
+bindsym $mod+Shift+Ctrl+7 move container to workspace 7;
+bindsym $mod+Shift+Ctrl+8 move container to workspace 8;
+bindsym $mod+Shift+Ctrl+9 move container to workspace 9;
+bindsym $mod+Shift+Ctrl+0 move container to workspace 10;
+
+# move focused container to workspace and move
 bindsym $mod+Shift+1 move container to workspace 1; workspace 1
 bindsym $mod+Shift+2 move container to workspace 2; workspace 2
 bindsym $mod+Shift+3 move container to workspace 3; workspace 3
@@ -96,12 +110,12 @@ client.focused_inactive     $bg-colorW       $bg-colorW       $inactive-text-col
 client.urgent               $bg-colorW       $bg-colorW       $text-colorW          $bg-colorW  $bg-colorW
 
 # i3 status bar setup
-set $transparent         #222222BB
+set $transparent         #22222299
 set $v-transparent       #22222255
 set $bg-color 	         #1a1a1aBB
 set $inactive-bg-color   #333333BB
 set $text-color          #EEEEEE
-set $inactive-text-color #AAAAAA
+set $inactive-text-color #999999
 set $urgent-bg-color     #994444
 
 bar {
@@ -111,13 +125,13 @@ bar {
     #tray_output LVDS-0
     i3bar_command i3bar -t
     position top
-    height 0
+    height 50
 	colors {
-        statusline #FFFFFF
+        statusline #FFFaFa
 	    background  $transparent
 	    separator   #979797
 	    #                  border             background         text
-	    focused_workspace  $v-transparent      $v-transparent          $text-color
+	    focused_workspace  $transparent      $transparent          $text-color
 	    inactive_workspace $transparent        $transparent $inactive-text-color
 	    urgent_workspace   $transparent        $urgent-bg-color   $text-color
 	}
@@ -140,8 +154,8 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 10 ; pkill -RTMIN+2 i3blocks"
-bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10 ; pkill -RTMIN+2 i3blocks"
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5 ; pkill -RTMIN+2 i3blocks"
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5 ; pkill -RTMIN+2 i3blocks"
 
 
 # Lock screen script
@@ -166,13 +180,15 @@ new_window pixel 1
 
 for_window [class="^.*"] border pixel 0
 for_window [class="FTermite"] border pixel 0, floating enable
-for_window [class="Termite"] border pixel 1
+for_window [class="Termite"] border pixel 0
+#for_window [class="Termite"] border pixel 1
 for_window [title="Calendar"] floating enable; #resize shrink width 10000px; resize grow width 100px; resize shrink height 10000px; resize grow height 200px;
 for_window [title="Thunar"] floating enable; #resize shrink width 10000px; resize grow width 100px; resize shrink height 10000px; resize grow height 200px;
 
 assign [class="Chromium"] 2
 assign [class="Slack"] 4
 assign [class="Spotify"] 5
+for_window [class="Spotify"] move to workspace 5
 
 # Screen compositers
 exec --no-startup-id compton -f --config ~/.config/compton.cfg
@@ -197,10 +213,12 @@ bindsym $mod+Ctrl+0     gaps inner all set  30; gaps outer all set 20; border pi
 
 # Client shortcuts
 bindsym $mod+Shift+c exec --no-startup-id chromium --force-device-scale-factor=2
-bindsym $mod+Shift+f exec --no-startup-id env MOZ_USE_XINPUT2=1 firefox-nightly
-bindsym $mod+Shift+s exec --no-startup-id spotify --class Spotify --force-device-scale-factor=2.0
+#bindsym $mod+Shift+f exec --no-startup-id env MOZ_USE_XINPUT2=1 firefox-nightly
+bindsym $mod+Shift+f exec --no-startup-id env MOZ_USE_XINPUT2=1 firefox
+bindsym $mod+Shift+s exec --no-startup-id spotify --force-device-scale-factor=2.0
 bindsym $mod+Shift+a exec slack --class Slack
 bindsym $mod+Shift+g exec --no-start-up gimp
+
 
 # Keyboard script when plugged in
 bindsym $mod+Shift+Insert exec --no-startup-id ~/scripts/keyboard.sh

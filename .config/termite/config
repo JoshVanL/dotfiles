@@ -7,7 +7,8 @@
 
 [options]
     #font = xos4 Terminess Powerline 11
-    font = Menlo for Powerline 28px
+    #font = Menlo for Powerline 28px
+    font = Menlo for Powerline 24px
     resize_grip = false
     scroll_on_output = false
     scroll_on_keystroke = true
@@ -54,7 +55,7 @@
     color2 = #00AA00
     color3 = #458588
     color4 = #008fAA
-    color5 = #AA00AA
+    color5 = #AA44AA
     color6 = #44BFBF
     color7 = #AAAAAA
     color8 = #555555

@@ -44,7 +44,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'git://github.com/chrisbra/Colorizer.git'
 
 "Latex
-"Plugin 'git://github.com/xuhdev/vim-latex-live-preview.git'
+Plugin 'git://github.com/xuhdev/vim-latex-live-preview.git'
 
 "Go
 Plugin 'fatih/vim-go'
@@ -60,7 +60,7 @@ Plugin 'git://github.com/bronson/vim-trailing-whitespace.git'
 "Plugin 'git://github.com/majutsushi/tagbar'
 
 "Puppet highlighting
-"Plugin 'git://github.com/puppetlabs/puppet-syntax-vim.git'
+Plugin 'git://github.com/puppetlabs/puppet-syntax-vim.git'
 
 "Ruby highlighting
 "Plugin 'vim-ruby/vim-ruby'
@@ -150,9 +150,8 @@ let NERDTreeShowHidden=1
 
 "Spell Checking
 autocmd BufNewFile,BufRead *.txt set spell spelllang=en_gb
-
-"Spell Checking
 autocmd BufNewFile,BufRead *.tex set spell spelllang=en_gb
+autocmd BufNewFile,BufRead *.rst set spell spelllang=en_gb
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -179,4 +178,25 @@ set hlsearch
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 "latext shortcut
-nnoremap <silent> <C-k> :!pdflatex % <CR> <CR>
+"nnoremap <silent> <C-k> :!pdflatex % <CR> <CR>
+
+"latex no conceal
+let g:tex_conceal = ""
+
+"Stop compile check on save
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
+"word wrap 80 chars for md files
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+"Spell check on git commit
+autocmd FileType gitcommit setlocal spell
+
+"Ensure spell check highlighting
+hi clear SpellBad
+hi SpellBad cterm=underline
+
+set conceallevel=1
+let g:indentLine_conceallevel=1
+autocmd VimEnter,WinEnter,BufNewFile,BufRead,BufEnter,TabEnter * IndentLinesReset
