@@ -65,6 +65,9 @@ Plugin 'git://github.com/puppetlabs/puppet-syntax-vim.git'
 "Ruby highlighting
 "Plugin 'vim-ruby/vim-ruby'
 
+"Better cpp syntax highlighting
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
 call vundle#end()            " required
 
 set nocompatible              " be iMproved, required
@@ -178,7 +181,10 @@ set hlsearch
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 "latext shortcut
-"nnoremap <silent> <C-k> :!pdflatex % <CR> <CR>
+"nnoremap <silent> <C-k> :!pdflatex -shell-escape % <CR> <CR>
+
+"Auto word wrap at 80 chars
+":set tw=80
 
 "latex no conceal
 let g:tex_conceal = ""

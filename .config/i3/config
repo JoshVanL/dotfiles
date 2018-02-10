@@ -1,6 +1,6 @@
 set $mod Mod4
 #font pango:Font Awesome, Arial 9
-font pango:Font Awesome, System San Francisco Display 9
+font pango:FontAwesome, System San Francisco Display, Solid 9
 
 floating_modifier $mod
 
@@ -172,9 +172,9 @@ exec_always --no-startup-id xrandr --dpi 220
 # Default window setup
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
-gaps inner 30
+gaps inner 15
 #gaps inner 15
-gaps outer 20
+gaps outer 7
 #gaps outer 10
 new_window pixel 1
 
@@ -192,6 +192,7 @@ for_window [class="Spotify"] move to workspace 5
 
 # Screen compositers
 exec --no-startup-id compton -f --config ~/.config/compton.cfg
+#exec --no-startup-id compton
 #exec --no-startup-id redshift
 exec --no-startup-id twmnd
 
