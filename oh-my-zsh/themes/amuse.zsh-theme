@@ -9,11 +9,11 @@ rbenv_version() {
 }
 
 
-PROMPT='%{%F{250}%}%n %{%F{240}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{240}%}% - %{%F{250}%}% %? %{%F{240}%}% - %{%F{245}%}%*%{%F{255}%}
+PROMPT='%{%F{250}%}%n %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%}
 $ '
 
 # Must use Powerline font, for \uE0A0 to render.
-ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{240}%}%  - %{%F{250}%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{250}%}%  - %{%F{250}%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="?"

@@ -6,8 +6,6 @@
 !config/rofi/*
 !config/twmn/*
 !config/i3/*
-!.vimrc
-!.vim/*
 !.xinitrc
 !i3blocks/*
 !scrips/*
@@ -19,6 +17,7 @@
 !.gitignore
 !.tmux.conf
 !.vimrc
+!.vim/autoload/*
 !.xinitrc
 !.zshrc
 !me.zsh-theme

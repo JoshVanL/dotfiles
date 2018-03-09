@@ -155,6 +155,8 @@ let NERDTreeShowHidden=1
 autocmd BufNewFile,BufRead *.txt set spell spelllang=en_gb
 autocmd BufNewFile,BufRead *.tex set spell spelllang=en_gb
 autocmd BufNewFile,BufRead *.rst set spell spelllang=en_gb
+autocmd BufNewFile,BufRead *.yaml set spell spelllang=en_gb
+autocmd BufNewFile,BufRead *.html set spell spelllang=en_gb
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -184,7 +186,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 "nnoremap <silent> <C-k> :!pdflatex -shell-escape % <CR> <CR>
 
 "Auto word wrap at 80 chars
-":set tw=80
+:set tw=80
 
 "latex no conceal
 let g:tex_conceal = ""

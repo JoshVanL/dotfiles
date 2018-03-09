@@ -121,6 +121,12 @@ export PATH=$PATH:/opt/intel/bin
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
+# For old version of Go
+#export PATH="/home/josh/Work/AppliedSecurity/go2/bin:$PATH"
+#export GOROOT=/home/josh/Work/AppliedSecurity/go2
+#export GOOS=linux
+#export GOARCH=amd64
+
 # Open CV
 export LD_LIBRARY_PATH=/usr/lib64:$LD_LIBRARY_PATH
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/include/opencv2/:/usr/include/opencv

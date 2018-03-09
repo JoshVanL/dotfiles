@@ -43,12 +43,13 @@
     #foreground_bold = #ffffff
     #foreground_dim = #888888
     #background = #282828
-    background = rgba(40, 40, 40, 0.87)
+    background = rgba(28, 28, 28, 0.7)
     #cursor = #657b7b
-    cursor = rgba(85, 85, 85, 0.1)
+    cursor = rgba(100, 100, 100, 0.1)
 
     # if unset, will reverse foreground and background
-    highlight = #2f2f2f
+    #highlight = #2f2f2f
+    highlight = rgba(50, 50, 50, 0.1)
 
     color0 = #000000
     color1 = #AA5050
@@ -59,12 +60,12 @@
     color6 = #44BFBF
     color7 = #AAAAAA
     color8 = #555555
-    color9 = #f97575
-    color10 = #d3869b
+    color9 = #ff77AA
+    color10 = #FF44CC
     color11 = #FFFF55
     color12 = #8ec6cf
-    color13 = #FF55FF
-    color14 = #f3427f
+    color13 = #FF88FF
+    color14 = #FFBBCC
     color15 = #AAAAAA
 
 [hints]
