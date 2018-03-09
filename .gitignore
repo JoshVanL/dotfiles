@@ -17,7 +17,7 @@
 !.gitignore
 !.tmux.conf
 !.vimrc
-!.vim/autoload/*
+!.vim/autoload
 !.xinitrc
 !.zshrc
 !me.zsh-theme
