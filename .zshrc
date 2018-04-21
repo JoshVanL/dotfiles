@@ -126,6 +126,9 @@ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 #export GOROOT=/home/josh/Work/AppliedSecurity/go2
 #export GOOS=linux
 #export GOARCH=amd64
+export GOOS=
+export GOARCH=
+export GOROOT=
 
 # Open CV
 export LD_LIBRARY_PATH=/usr/lib64:$LD_LIBRARY_PATH

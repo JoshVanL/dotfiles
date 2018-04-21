@@ -157,6 +157,7 @@ autocmd BufNewFile,BufRead *.tex set spell spelllang=en_gb
 autocmd BufNewFile,BufRead *.rst set spell spelllang=en_gb
 autocmd BufNewFile,BufRead *.yaml set spell spelllang=en_gb
 autocmd BufNewFile,BufRead *.html set spell spelllang=en_gb
+autocmd BufNewFile,BufRead *.md set spell spelllang=en_gb
 
 "neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -183,7 +184,7 @@ set hlsearch
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 "latext shortcut
-"nnoremap <silent> <C-k> :!pdflatex -shell-escape % <CR> <CR>
+nnoremap <silent> <C-k> :!pdflatex -shell-escape % <CR> <CR>
 
 "Auto word wrap at 80 chars
 :set tw=80
