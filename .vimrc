@@ -184,7 +184,7 @@ set hlsearch
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 "latext shortcut
-nnoremap <silent> <C-k> :!pdflatex -shell-escape % <CR> <CR>
+"nnoremap <silent> <C-k> :!pdflatex -shell-escape % <CR> <CR>
 
 "Auto word wrap at 80 chars
 :set tw=80

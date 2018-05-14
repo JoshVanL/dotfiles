@@ -172,7 +172,7 @@ exec_always --no-startup-id xrandr --dpi 220
 # Default window setup
 for_window [class=".*"] border pixel 0
 hide_edge_borders both
-gaps inner 15
+gaps inner 5
 #gaps inner 15
 gaps outer 7
 #gaps outer 10

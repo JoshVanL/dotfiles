@@ -9,7 +9,7 @@ B='#00000000'  # blank
 C='#00000000'  # clear ish
 D='#aaaaae00'  # default
 #T='#888888FF'  # text
-T='#888888FF'  # text
+T='#AAAAAAFF'  # text
 W='#66666666'  # wrong
 V='#ffd1dcDD'  # verifying
 
@@ -26,23 +26,26 @@ i3lock              \
 --linecolor=$B        \
 --separatorcolor=$D   \
 \
---textcolor=$T        \
 --timecolor=$T        \
 --datecolor=$T        \
 --keyhlcolor=$W       \
 --bshlcolor=$W        \
+--time-font=DejaVu Sans   \
+--wrong-font=DejaVu Sans   \
+--date-font=DejaVu Sans   \
+--verifcolor=$T \
+--wrongtext="nope . . ." \
+--veriftext="thinking . . ." \
+--wrongcolor=$T \
 \
 --screen 0            \
---blur 10              \
+--blur 5              \
 --clock               \
 --indicator           \
---timefont=DejaVu Sans   \
---datefont=DejaVu Sans   \
 --timestr="%H:%M:%S"  \
 --datestr="%A, %m %Y" \
---veriftext=". . ."   \
---wrongtext="bad pass" \
---timesize 60            \
---datesize 32           \
+--timesize 30            \
+--datesize 20           \
 # --modsize=10
 # etc
+#--textcolor=$T        \
