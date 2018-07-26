@@ -1,6 +1,6 @@
 set $mod Mod4
-#font pango:Font Awesome, Arial 9
-font pango:FontAwesome, Roboto, 9
+font pango:Font Awesome, Arial 9
+#font pango:FontAwesome, Roboto, 9
 #font pango:FontAwesome, System San Francisco Display, 8.5
 
 floating_modifier $mod
