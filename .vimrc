@@ -38,7 +38,7 @@ Plugin 'git://github.com/vim-syntastic/syntastic.git'
 Plugin 'tpope/vim-fugitive'
 
 "Javascript Syntax
-"Plugin 'jelera/vim-javascript-syntax'
+Plugin 'jelera/vim-javascript-syntax'
 
 "Colorizer
 Plugin 'git://github.com/chrisbra/Colorizer.git'
@@ -67,6 +67,13 @@ Plugin 'git://github.com/puppetlabs/puppet-syntax-vim.git'
 
 "Better cpp syntax highlighting
 Plugin 'octol/vim-cpp-enhanced-highlight'
+
+"ejs highlighting
+Plugin 'git://github.com/nikvdp/ejs-syntax.git'
+
+"yaml
+"Plugin 'avakhov/vim-yaml'
+"Plugin 'git://github.com/pedrohdz/vim-yaml-folds.git'
 
 call vundle#end()            " required
 
@@ -167,7 +174,8 @@ cmap w!! w !sudo tee > /dev/null %
 
 " Go build
 cmap gg GoBuild <CR>
-cmap tt !go test -v <CR>
+cmap tt GoTest <CR>
+nmap gi :GoIfErr <CR>
 
 
 " Copy/Paste to system clipboard
@@ -187,7 +195,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 "nnoremap <silent> <C-k> :!pdflatex -shell-escape % <CR> <CR>
 
 "Auto word wrap at 80 chars
-:set tw=80
+":set tw=80
 
 "latex no conceal
 let g:tex_conceal = ""
@@ -198,6 +206,7 @@ nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 "word wrap 80 chars for md files
 au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.tex setlocal textwidth=80
 
 "Spell check on git commit
 autocmd FileType gitcommit setlocal spell

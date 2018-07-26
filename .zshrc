@@ -114,6 +114,7 @@ export EDITOR=vim
 
 alias kc=kubectl
 alias feha='feh --scale-down --auto-zoom'
+alias tm=./tarmak_linux_amd64
 
 export PATH=$PATH:/home/josh/go/bin
 export GOPATH=/home/josh/go

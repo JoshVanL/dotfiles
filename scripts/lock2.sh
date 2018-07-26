@@ -30,9 +30,10 @@ i3lock              \
 --datecolor=$T        \
 --keyhlcolor=$W       \
 --bshlcolor=$W        \
---time-font=DejaVu Sans   \
---wrong-font=DejaVu Sans   \
---date-font=DejaVu Sans   \
+--time-font=Roboto   \
+--wrong-font=Roboto   \
+--date-font=Roboto   \
+--layout-font=Roboto   \
 --verifcolor=$T \
 --wrongtext="nope . . ." \
 --veriftext="thinking . . ." \

@@ -9,7 +9,7 @@ rbenv_version() {
 }
 
 
-PROMPT='%{%F{250}%}%n %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% - %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%}
+PROMPT='%{%F{250}%}%n %{%F{250}%}% %{%F{139}%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{%F{250}%}% --------- %{%F{250}%}% %? %{%F{250}%}% - %{%F{245}%}%*%{%F{255}%}
 $ '
 
 # Must use Powerline font, for \uE0A0 to render.
