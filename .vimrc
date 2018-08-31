@@ -218,3 +218,6 @@ hi SpellBad cterm=underline
 set conceallevel=1
 let g:indentLine_conceallevel=1
 autocmd VimEnter,WinEnter,BufNewFile,BufRead,BufEnter,TabEnter * IndentLinesReset
+
+
+"set shiftwidth=2

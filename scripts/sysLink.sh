@@ -12,4 +12,4 @@ ln -sf ~/dotfiles/.config ~/.config
 ln -sf ~/dotfiles/oh-my-zsh  ~/oh-my-zsh
 ln -sf ~/dotfiles/scripts ~/scripts
 ln -sf ~/dotfiles/me.zsh-theme ~/oh-my-zsh/themes/me.zsh-theme
-ln -sf ~/dotfiles/i3blocks /lib/i3blocks
+#sudo ln -sf ~/dotfiles/i3blocks /lib/i3blocks

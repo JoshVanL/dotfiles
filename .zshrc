@@ -21,7 +21,6 @@ case $- in *i*)
     fi
 esac
 
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -142,3 +141,6 @@ export O_LIBS="-L/usr/lib64/ -lopencv_core
 -lopencv_video -lopencv_features2d -lopencv_calib3d
 -lopencv_objdetect -lopencv_contrib -lopencv_legacy
 -lopencv_flann"
+
+# Ruby
+export PATH=$PATH:/root/.gem/ruby/2.5.0/bin

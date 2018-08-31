@@ -24,8 +24,9 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-bindsym $mod+Tab exec echo "swap_focus" | nc --send-only -U "$XDG_RUNTIME_DIR/i3/event-listener.sock"
+#bindsym $mod+Tab exec echo "swap_focus" | nc --send-only -U "$XDG_RUNTIME_DIR/i3/event-listener.sock"
 exec --no-startup-id event-listener.py
+exec --no-startup-id fusuma
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -95,13 +96,15 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
+## exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
+#
 set $bg-colorW            #FFFFFF
 set $bd-colorW            #FFFFFF
-set $inactive-bg-colorW   #383C4A
-set $inactive-bd-colorW   #383C4A
+#set $inactive-bg-colorW   #383C4A
+#set $inactive-bd-colorW   #383C4A
+set $inactive-bg-colorW   #f3f4f5
+set $inactive-bd-colorW   #f3f4f5
 set $text-colorW          #f3f4f5
 set $inactive-text-colorW #676E7D
 #                           border          background        text                 indicator  child border
@@ -112,13 +115,14 @@ client.urgent               $bg-colorW       $bg-colorW       $text-colorW      
 
 # i3 status bar setup
 set $transparent         #44444499
-set $not-transparent     #224466ea
+set $not-transparent     #666666ea
 set $v-transparent       #444444ff
 set $bg-color 	         #444444bb
 set $inactive-bg-color   #333333BB
 set $text-color          #EEEEEE
 set $text-color-w          #FFFFFF
-set $inactive-text-color #999999
+#set $inactive-text-color #222222
+set $inactive-text-color #444444ff
 set $urgent-bg-color     #994444
 
 bar {
@@ -140,7 +144,7 @@ bar {
 	    #inactive_workspace $transparent        $transparent $inactive-text-color
 	    focused_workspace  $not-transparent      $not-transparent          $text-color-w
 	    inactive_workspace $not-transparent        $not-transparent $inactive-text-color
-	    urgent_workspace   $transparent        $urgent-bg-color   $text-color
+	    urgent_workspace   $not-transparent        $urgent-bg-color   $text-color
 	}
 }
 
@@ -153,7 +157,6 @@ bindsym XF86Launch3 exec --no-startup-id "amixer set Capture toggle ; pkill -RTM
 bindsym $mod+Shift+P exec --no-startup-id pavucontrol
 
 bindsym $mod+Shift+B exec --no-startup-id sudo /home/josh/scripts/toggleBluetooth.sh
-
 
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
@@ -201,7 +204,7 @@ for_window [class="Spotify"] move to workspace 5
 exec --no-startup-id compton -f --config ~/.config/compton.cfg
 #exec --no-startup-id compton
 #exec --no-startup-id redshift
-exec --no-startup-id twmnd
+#exec --no-startup-id twmnd
 
 exec --no-startup-id rfkill block 0
 
@@ -221,8 +224,8 @@ bindsym $mod+Ctrl+0     gaps inner all set  30; gaps outer all set 20; border pi
 
 # Client shortcuts
 bindsym $mod+Shift+c exec --no-startup-id chromium --force-device-scale-factor=2
-#bindsym $mod+Shift+f exec --no-startup-id env MOZ_USE_XINPUT2=1 firefox-nightly
-bindsym $mod+Shift+f exec --no-startup-id env MOZ_USE_XINPUT2=1 firefox
+bindsym $mod+Shift+f exec --no-startup-id env MOZ_USE_XINPUT2=1 firefox-nightly
+#bindsym $mod+Shift+f exec --no-startup-id env MOZ_USE_XINPUT2=1 firefox
 bindsym $mod+Shift+s exec --no-startup-id spotify --force-device-scale-factor=2.0
 bindsym $mod+Shift+a exec slack --class Slack
 bindsym $mod+Shift+g exec --no-start-up gimp

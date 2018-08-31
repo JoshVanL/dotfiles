@@ -56,7 +56,8 @@
     color2 = #00AA00
     color3 = #458588
     color4 = #008fAA
-    color5 = #AA44AA
+    #color5 = #AA44AA
+    color5 = #6eb6bf
     color6 = #44BFBF
     color7 = #AAAAAA
     color8 = #555555
