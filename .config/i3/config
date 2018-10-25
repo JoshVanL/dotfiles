@@ -10,6 +10,7 @@ bindsym $mod+Shift+Ctrl+Delete exec sudo poweroff
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id termite --class Termite
+#bindsym $mod+Return exec --no-startup-id /home/josh/go/src/github.com/liamg/aminal/aminal
 bindsym $mod+BackSpace exec --no-startup-id termite --class FTermite
 bindsym $mod+Shift+Return split h; exec --no-startup-id termite; split v
 
@@ -99,11 +100,13 @@ bindsym $mod+Shift+r restart
 ## exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #
-set $bg-colorW            #FFFFFF
-set $bd-colorW            #FFFFFF
+set $bg-colorW            #999999
+#set $bd-colorW            #FFFFFF
+set $bd-colorW            #8877bb
 #set $inactive-bg-colorW   #383C4A
 #set $inactive-bd-colorW   #383C4A
-set $inactive-bg-colorW   #f3f4f5
+#set $inactive-bg-colorW   #f3f4f5
+set $inactive-bg-colorW   #f3f4ff
 set $inactive-bd-colorW   #f3f4f5
 set $text-colorW          #f3f4f5
 set $inactive-text-colorW #676E7D
@@ -115,14 +118,15 @@ client.urgent               $bg-colorW       $bg-colorW       $text-colorW      
 
 # i3 status bar setup
 set $transparent         #44444499
-set $not-transparent     #666666ea
+#set $not-transparent     #666666ea
+set $not-transparent     #666666bb
 set $v-transparent       #444444ff
 set $bg-color 	         #444444bb
 set $inactive-bg-color   #333333BB
 set $text-color          #EEEEEE
 set $text-color-w          #FFFFFF
 #set $inactive-text-color #222222
-set $inactive-text-color #444444ff
+set $inactive-text-color #222222ff
 set $urgent-bg-color     #994444
 
 bar {
@@ -135,7 +139,8 @@ bar {
     height 45
     separator_symbol "  "
 	colors {
-        statusline #FFFFFF
+        #statusline #FFFFFF
+        statusline #dddddd
 	    #background  $bg-color
 	    background  $not-transparent
 	    separator   #dddddd
@@ -180,7 +185,7 @@ exec_always --no-startup-id feh --bg-scale $wall
 exec_always --no-startup-id xrandr --dpi 220
 
 # Default window setup
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 hide_edge_borders both
 gaps inner 5
 #gaps inner 15
@@ -188,9 +193,9 @@ gaps outer 7
 #gaps outer 10
 new_window pixel 1
 
-for_window [class="^.*"] border pixel 0
-for_window [class="FTermite"] border pixel 0, floating enable
-for_window [class="Termite"] border pixel 0
+for_window [class="^.*"] border pixel 1
+for_window [class="FTermite"] border pixel 1, floating enable
+for_window [class="Termite"] border pixel 1
 #for_window [class="Termite"] border pixel 1
 for_window [title="Calendar"] floating enable; #resize shrink width 10000px; resize grow width 100px; resize shrink height 10000px; resize grow height 200px;
 for_window [title="Thunar"] floating enable; #resize shrink width 10000px; resize grow width 100px; resize shrink height 10000px; resize grow height 200px;
@@ -219,8 +224,8 @@ bindsym $mod+Mod1+Right gaps inner all plus  5
 bindsym $mod+Mod1+Left  gaps inner all minus 5
 bindsym $mod+Mod1+Up    gaps outer all plus  5
 bindsym $mod+Mod1+Down  gaps outer all minus 5
-bindsym $mod+Mod1+0     gaps inner all set   0; gaps outer all set 0; border pixel 0
-bindsym $mod+Ctrl+0     gaps inner all set  30; gaps outer all set 20; border pixel 0
+bindsym $mod+Mod1+0     gaps inner all set   0; gaps outer all set 0; border pixel 1
+bindsym $mod+Ctrl+0     gaps inner all set  30; gaps outer all set 20; border pixel 1
 
 # Client shortcuts
 bindsym $mod+Shift+c exec --no-startup-id chromium --force-device-scale-factor=2
