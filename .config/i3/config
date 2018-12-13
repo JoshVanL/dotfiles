@@ -22,27 +22,28 @@ bindsym $mod+d exec --no-startup-id rofi -font "Roboto 26" -show run
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
+bindsym $mod+h focus left
 bindsym $mod+Down focus down
+bindsym $mod+j focus down
 bindsym $mod+Up focus up
+bindsym $mod+k focus up
 bindsym $mod+Right focus right
+bindsym $mod+l focus right
 #bindsym $mod+Tab exec echo "swap_focus" | nc --send-only -U "$XDG_RUNTIME_DIR/i3/event-listener.sock"
 exec --no-startup-id event-listener.py
 exec --no-startup-id fusuma
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+h move left
 bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+j move down
 bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+k move up
 bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -97,12 +98,29 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
 bindsym $mod+Shift+r restart
 
+#*.color0: #1d2021
+#*.color1:  #cc241d
+#*.color2:  #98971a
+#*.color3:  #d79921
+#*.color4:   #458588
+#*.color5:   #b16286
+#*.color6:  #689d6a
+#*.color7:  #a89984
+#*.color8:  #928374
+#*.color9:  #fb4934
+#*.color10: #b8bb26
+#*.color11: #fabd2f
+#*.color12:  #83a598
+#*.color13: #d3869b
+#*.color14: #8ec07c
+#*.color15: #ebdbb2
+
 ## exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #
 set $bg-colorW            #999999
 #set $bd-colorW            #FFFFFF
-set $bd-colorW            #8877bb
+set $bd-colorW            #b16286
 #set $inactive-bg-colorW   #383C4A
 #set $inactive-bd-colorW   #383C4A
 #set $inactive-bg-colorW   #f3f4f5
@@ -112,21 +130,21 @@ set $text-colorW          #f3f4f5
 set $inactive-text-colorW #676E7D
 #                           border          background        text                 indicator  child border
 client.focused              $bd-colorW       $bg-colorW       $text-colorW          $bd-colorW  $bd-colorW
-client.unfocused            $bg-colorW       $bg-colorW       $inactive-text-colorW $bg-colorW  $bg-colorW
-client.focused_inactive     $bg-colorW       $bg-colorW       $inactive-text-colorW $bg-colorW  $bg-colorW
-client.urgent               $bg-colorW       $bg-colorW       $text-colorW          $bg-colorW  $bg-colorW
+client.unfocused            $bg-colorW       $bg-colorW       $inactive-text-colorW $bg-colorW  #222222
+client.focused_inactive     $bg-colorW       $bg-colorW       $inactive-text-colorW $bg-colorW  #222222
+client.urgent               $bg-colorW       $bg-colorW       $text-colorW          $bg-colorW  #222222
 
 # i3 status bar setup
 set $transparent         #44444499
-#set $not-transparent     #666666ea
-set $not-transparent     #666666bb
+#set $not-transparent     #666666bb
+set $not-transparent     #2c2c2ccc
 set $v-transparent       #444444ff
 set $bg-color 	         #444444bb
 set $inactive-bg-color   #333333BB
-set $text-color          #EEEEEE
+set $text-color          #FFFFFF
 set $text-color-w          #FFFFFF
 #set $inactive-text-color #222222
-set $inactive-text-color #222222ff
+set $inactive-text-color #888888ff
 set $urgent-bg-color     #994444
 
 bar {
@@ -142,6 +160,7 @@ bar {
         #statusline #FFFFFF
         statusline #dddddd
 	    #background  $bg-color
+	    #background  $not-transparent
 	    background  $not-transparent
 	    separator   #dddddd
 	    #                  border             background         text
@@ -162,6 +181,9 @@ bindsym XF86Launch3 exec --no-startup-id "amixer set Capture toggle ; pkill -RTM
 bindsym $mod+Shift+P exec --no-startup-id pavucontrol
 
 bindsym $mod+Shift+B exec --no-startup-id sudo /home/josh/scripts/toggleBluetooth.sh
+
+bindsym $mod+Shift+M exec --no-startup-id /home/josh/scripts/memoryshow.sh
+bindsym $mod+Shift+N exec --no-startup-id /home/josh/scripts/cpushow.sh
 
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
@@ -207,6 +229,8 @@ for_window [class="Spotify"] move to workspace 5
 
 # Screen compositers
 exec --no-startup-id compton -f --config ~/.config/compton.cfg
+
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 #exec --no-startup-id compton
 #exec --no-startup-id redshift
 #exec --no-startup-id twmnd

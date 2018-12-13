@@ -103,7 +103,7 @@ function other {
 if [[ $(echo $acpi | grep -o "Charging") == "Charging" ]]
 then
     charging
-    printf "  $percent%%"
+    printf "  $percent%%"
 else
     other
     printf "  $percent%%"
