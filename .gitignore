@@ -1,4 +1,5 @@
-/*
+/.config
+!scripts
 !config/compton.cfg
 !config/redshift.conf
 !config/termite/config
@@ -8,7 +9,6 @@
 !config/i3/*
 !.xinitrc
 !i3blocks/*
-!scrips/*
 !.Xresources
 !.gitignore
 !.tmux.conf
